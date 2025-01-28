@@ -1,67 +1,80 @@
-[![example-flask](https://github.com/koyeb/example-flask/actions/workflows/deploy.yaml/badge.svg)](https://github.com/koyeb/example-flask/actions)
+# 📸 Google Lens Deployment with Flask 🚀
 
-<div align="center">
-  <a href="https://koyeb.com">
-    <img src="https://www.koyeb.com/static/images/icons/koyeb.svg" alt="Logo" width="80" height="80">
-  </a>
-  <h3 align="center">Koyeb Serverless Platform</h3>
-  <p align="center">
-    Deploy a Flask application on Koyeb
-    <br />
-    <a href="https://koyeb.com">Learn more about Koyeb</a>
-    ·
-    <a href="https://koyeb.com/docs">Explore the documentation</a>
-    ·
-    <a href="https://koyeb.com/tutorials">Discover our tutorials</a>
-  </p>
-</div>
+This project demonstrates a Flask-based web application that allows users to upload images, which are then uploaded to **Imgur** 🖼️. The image’s URL is then used to query **Google Lens** 🔍 via **SerpAPI**, which returns relevant search results based on the image content. Perfect for anyone interested in integrating image recognition into web apps!
+
+## 🌟 Features
+- **Upload** an image 📤 via a user-friendly interface.
+- **Image Hosting** through Imgur 🔗 for easy access and sharing.
+- **Google Lens Analysis** powered by SerpAPI to fetch image-based search results 🧐.
+- **Responsive UI** to display results dynamically 🎉.
+
+## 🧑‍💻 Installation & Setup
+
+### 🔧 Prerequisites
+Before getting started, make sure you have:
+- Python 3.x
+- Pip (Python package installer)
+- Flask (`pip install flask`)
+- Requests (`pip install requests`)
+- [SerpAPI Key](https://serpapi.com/) for Google Lens integration
+- [Imgur Client ID](https://apidocs.imgur.com/) for image uploads
+
+### ⚙️ Steps to Deploy
+
+1. **Clone the repository**:
+    ```bash
+    git clone https://github.com/krishhhr/googlelensdeploynew.git
+    cd googlelensdeploynew
+    ```
+
+2. **Install dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+3. **Configure API keys**:
+   - Replace `client_id` with your **Imgur Client ID**.
+   - Replace `SERP_API_KEY` with your **SerpAPI API key**.
+
+4. **Run the Flask app**:
+    ```bash
+    python app.py
+    ```
+    The app will be accessible at `http://127.0.0.1:5000/`.
+
+### 📸 Upload Image
+- Click on the **"Upload Image"** button to select an image from your device.
+- Once uploaded, the image will be sent to **Imgur** and analyzed by **Google Lens**.
+
+### 🔍 Search Results
+- After the image is analyzed, the Google Lens search results will be shown below the image, including possible matches or relevant information.
+  ![image](https://github.com/user-attachments/assets/f276eda3-ee92-43fc-9fb1-27a8ce84ba8c)
 
 
-## About Koyeb and the Flask example application
+## ✨ How It Works
+1. **Image Upload**: Users upload an image to the web app via a simple form.
+2. **Imgur API**: The image is sent to **Imgur**'s API, which returns a URL for the image.
+3. **Google Lens**: The Imgur URL is then passed to **SerpAPI** to retrieve Google Lens results.
+4. **Display Results**: The results are displayed dynamically on the webpage.
 
-Koyeb is a developer-friendly serverless platform to deploy apps globally. No-ops, servers, or infrastructure management.
-This repository contains a Flask application you can deploy on the Koyeb serverless platform for testing.
+## 💡 Example Use Case
+- **Image Recognition**: Upload an image and discover similar objects or information related to it.
+- **Product Search**: Take a photo of a product and get related results.
 
-This example application is designed to show how a Flask application can be deployed on Koyeb.
+## 🛠️ Contributing
+We welcome contributions! Feel free to fork the repository, make improvements, or submit bug fixes. To contribute:
+1. Fork the repo
+2. Create a feature branch (`git checkout -b feature-branch`)
+3. Commit your changes (`git commit -am 'Add new feature'`)
+4. Push to your branch (`git push origin feature-branch`)
+5. Open a pull request
 
-## Getting Started
+## 🔑 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Follow the steps below to deploy and run the Flask application on your Koyeb account.
+## 🏆 Acknowledgements
+- [Flask](https://flask.palletsprojects.com/) for creating the web framework.
+- [Imgur API](https://apidocs.imgur.com/) for image hosting.
+- [SerpAPI](https://serpapi.com/) for powering Google Lens integration.
 
-### Requirements
-
-You need a Koyeb account to successfully deploy and run this application. If you don't already have an account, you can sign-up for free [here](https://app.koyeb.com/auth/signup).
-
-### Deploy using the Koyeb button
-
-The fastest way to deploy the Flask application is to click the **Deploy to Koyeb** button below.
-
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/koyeb/example-flask&branch=main&name=flask-on-koyeb)
-
-Clicking on this button brings you to the Koyeb App creation page with everything pre-set to launch this application.
-
-_To modify this application example, you will need to fork this repository. Checkout the [fork and deploy](#fork-and-deploy-to-koyeb) instructions._
-
-### Fork and deploy to Koyeb
-
-If you want to customize and enhance this application, you need to fork this repository.
-
-If you used the **Deploy to Koyeb** button, you can simply link your service to your forked repository to be able to push changes.
-Alternatively, you can manually create the application as described below.
-
-On the [Koyeb Control Panel](//app.koyeb.com/apps), on the **Overview** tab, click the **Create Web Service** button to begin.
-
-1. Select **GitHub** as the deployment method.
-2. In the repositories list, select the repository you just forked.
-3. In the **Builder** section, click the **override** toggle associated with the **Run command** and enter `gunicorn app:app` in the field.
-4. Choose a name for your App and Service, i.e `flask-on-koyeb`, and click **Deploy**.
-
-You land on the deployment page where you can follow the build of your Flask application. Once the build is completed, your application is being deployed and you will be able to access it via `<YOUR_APP_NAME>-<YOUR_ORG_NAME>.koyeb.app`.
-
-## Contributing
-
-If you have any questions, ideas or suggestions regarding this application sample, feel free to open an [issue](//github.com//koyeb/example-flask/issues) or fork this repository and open a [pull request](//github.com/koyeb/example-flask/pulls).
-
-## Contact
-
-[Koyeb](https://www.koyeb.com) - [@gokoyeb](https://twitter.com/gokoyeb) - [Slack](http://slack.koyeb.com/)
+Happy Image Searching! 📸✨
