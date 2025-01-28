@@ -40,7 +40,7 @@ def index():
 
                 # Perform the Google Lens search using the Imgur URL
                 params = {
-                    "api_key": "21ead71b458d051c367a569ed84627ed80300e1a006d88582330eaacf8c48c99",
+                    "api_key": "SERP_API_KEY",
                     "engine": "google_lens",
                     "url": imgur_url,
                     "country": "in"
