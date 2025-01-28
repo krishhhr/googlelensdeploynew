@@ -48,6 +48,7 @@ Before getting started, make sure you have:
 
 ### 🔍 Search Results
 - After the image is analyzed, the Google Lens search results will be shown below the image, including possible matches or relevant information.
+  
   ![image](https://github.com/user-attachments/assets/f276eda3-ee92-43fc-9fb1-27a8ce84ba8c)
 
 
